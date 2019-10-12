@@ -1,0 +1,37 @@
+.CitySideBar {
+  flex-basis: 90%;
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+@media (min-width: 576px) {
+  .CitySideBar {
+    flex-basis: 95%;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 768px) {
+  .CitySideBar {
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 992px) {
+  .CitySideBar {
+    flex-basis: 32%;
+    justify-content: flex-start;
+    padding: 0;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .CitySideBar {
+    flex-basis: 27%;
+
+  }
+}

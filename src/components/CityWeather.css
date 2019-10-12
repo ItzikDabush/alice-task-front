@@ -1,0 +1,27 @@
+
+.CityWeather {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.CityWeather-title {
+  font-size: 4rem;
+  text-align: right;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.CityWeather-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 992px) {
+  
+  .CityWeather {
+    margin-top: 15%;
+  }
+}

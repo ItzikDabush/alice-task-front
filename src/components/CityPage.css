@@ -1,0 +1,31 @@
+
+.CityPage { 
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.CityPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #ff5476;
+  text-align: justify;
+}
+
+.CityPage.berlin {
+  color: #00bbd3;
+}
+
+
+@media (min-width: 992px) {
+  .CityPage {
+    flex-direction: row-reverse;
+    align-items: stretch;
+    justify-content: space-between;
+    padding-right: 6rem;
+    padding-top: 3%;
+  }
+}

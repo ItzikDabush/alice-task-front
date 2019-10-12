@@ -1,0 +1,115 @@
+html {
+  width: 100%;
+  font-size: 10px;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-height: 100%;
+  height: 100%;
+  color: #fcfbfd;
+  font-family: "Almoni DL AAA", Courier, monospace;
+
+  background: rgb(85, 84, 84);
+  background: radial-gradient(
+    circle,
+    rgba(85, 84, 84, 0.9766281512605042) 7%,
+    rgba(34, 34, 34, 1) 87%
+  );
+}
+
+@font-face {
+  font-family: "Almoni DL AAA";
+  src: local('Custom Font'), url("./fonts/almoni-dl-aaa-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+000-5FF;
+  src: 
+}
+
+@font-face {
+  font-family: "Almoni DL AAA";
+  src: local('Custom Font'), url("./fonts/almoni-dl-aaa-black_0.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  unicode-range: U+000-5FF;
+}
+
+@font-face {
+  font-family: "Almoni DL AAA";
+  src: local('Custom Font'), url("./fonts/almoni-dl-aaa-bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  unicode-range: U+000-5FF;
+}
+
+@font-face {
+  font-family: "Almoni DL AAA";
+  src: local('Custom Font'),url("./fonts/almoni-dl-aaa-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  unicode-range: U+000-5FF;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.fade-enter {
+  opacity: 0.01;
+  transition: all 200ms;
+}
+
+.fade-enter-active {
+  opacity: 1;
+
+  transition: all 800ms;
+  transition-delay: 800ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.fade-exit-active {
+  opacity: 0.01;
+
+  transition: all 800ms;
+  transition-delay: 800ms;
+}

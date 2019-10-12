@@ -1,0 +1,75 @@
+
+.CityImage img {
+  display: none;
+  max-width: 100%;
+}
+
+.CityImage-title {
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+@media (min-width: 576px) {
+  .CityImage-title {
+    margin: 0;
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .CityImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 992px) {
+  .CityImage img {
+    display: block;
+  }
+  .CityImage {
+    overflow: hidden;
+    margin-top: 40px;
+    flex-basis: 65%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .amsterdam-img {
+    margin-left: -2%;
+    min-width: 1000px;
+    max-width: 1331px;
+    max-height: 887px;
+    object-fit: contain;
+  }
+
+  .berlin-img {
+    object-fit: cover;
+    max-width: 1215px;
+    max-height: 713px;
+    min-width: 700px;
+    padding-left: 4%;
+  }
+
+  .london-img {
+    min-width: 900px;
+    max-width: 1600px;
+    max-height: 1400px;
+  }
+
+  .CityImage-title {
+    font-size: 9rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .CityImage {
+    justify-content: space-between;
+  }
+
+  .CityImage-title {
+    margin-top: 0;
+  }
+}

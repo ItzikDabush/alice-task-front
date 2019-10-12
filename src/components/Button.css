@@ -1,0 +1,29 @@
+
+.btn-try-again {
+  margin-top: 20px;
+  border: 1px solid #ff5476;
+  background-color: inherit;
+  border-radius: 28px;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+  align-self: center;
+  outline: none;
+}
+
+.berlin-btn {
+  border: 1px solid #00bbd3;
+}
+
+.btn-try-again:hover:focus {
+  background-color: inherit;
+  box-shadow: 0px 0px 5px 0px #ff5476;
+  color: white;
+  border: 1px solid inherit;
+}
+.berlin-btn:hover:focus {
+  box-shadow: 0px 0px 5px 0px #00bbd3;
+}
