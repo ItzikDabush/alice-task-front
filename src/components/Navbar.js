@@ -3,7 +3,7 @@ import {NavLink, withRouter} from "react-router-dom";
 import logo from "../images/logo.png";
 import "./Navbar.css";
 
-function Navbar({cities, cityChosen, setCity}) {
+const Navbar = ({cities, cityChosen, setCity}) => {
   const handleClick = evt => {
     const selected = evt.target.name;
     setCity(selected);

@@ -2,7 +2,7 @@ import React from "react";
 import './WeatherDatailes.css';
 import "../fonts/owfont-master/css/owfont-regular.min.css";
 
-function WeatherDatailes({data}) {
+const WeatherDatailes = ({data}) => {
   const { icon, temperature, precipitation, humadity, wind } = data;
   return (
     <React.Fragment>
