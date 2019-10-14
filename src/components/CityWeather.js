@@ -25,30 +25,26 @@ class CityWeather extends Component {
     const url = `https://alice-task-server.herokuapp.com/${this.props.currentCity}`;
     const data = fetch(url)
       .then(res => {
-        
         if (res.ok) {
           return res.json();
         }
         return Promise.reject(res.status);
       })
       .then(data => {
-        console.log(data)
+        console.log(data);
         this.setState({
           data: data,
           dataLoadedFromServer: true,
           error: false
         });
       })
-      .catch(
-        //catch errors during the fetch procces
-        error => {
-          console.log(error);
-          this.setState({
-            error: true,
-            dataLoadedFromServer: false
-          });
-        }
-      );
+      .catch(error => {
+        console.log(error);
+        this.setState({
+          error: true,
+          dataLoadedFromServer: false
+        });
+      });
     return data;
   }
 
