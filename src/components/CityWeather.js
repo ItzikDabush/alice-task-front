@@ -10,7 +10,7 @@ class CityWeather extends Component {
     this.state = {
       data: {},
       dataLoadedFromServer: false,
-      error:false
+      error: false
     };
 
     this.getWeather = this.getWeather.bind(this);
@@ -21,9 +21,9 @@ class CityWeather extends Component {
   }
 
   getWeather() {
-    this.setState({error: false, dataLoadedFromServer: false})
+    this.setState({ error: false, dataLoadedFromServer: false });
     console.log("inside getWeather");
-    const url = `http://localhost:3001/${this.props.currentCity}`;
+    const url = `https://alice-task-server.herokuapp.com/${this.props.currentCity}`;
     const data = fetch(url)
       .then(res => {
         if (res.status === 200) {
@@ -59,8 +59,10 @@ class CityWeather extends Component {
       <section className="CityWeather">
         <h2 className="CityWeather-title">מזג אוויר עכשיו</h2>
         {error ? (
-          <ErrorMessage currentCity={currentCity} getWeather={this.getWeather}/>
-         
+          <ErrorMessage
+            currentCity={currentCity}
+            getWeather={this.getWeather}
+          />
         ) : dataLoadedFromServer ? (
           <WeatherDatailes data={data} />
         ) : (
