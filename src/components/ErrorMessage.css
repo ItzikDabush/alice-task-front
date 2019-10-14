@@ -1,0 +1,9 @@
+.ErrorMessage-text {
+    align-self: center;
+    opacity: 0.7;
+    color: #fcfbfd;
+    font-size: 1.9rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 2.5rem;
+}

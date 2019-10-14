@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import WeatherDatailes from "./WeatherDatailes";
-import Button from "./Button";
 import LoadingSpinner from "./LoadingSpinner";
 import "./CityWeather.css";
+import ErrorMessage from "./ErrorMessage";
 
 class CityWeather extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null,
       data: {},
-      isLoaded: false
+      dataLoadedFromServer: false,
+      error:false
     };
 
     this.getWeather = this.getWeather.bind(this);
@@ -21,43 +21,47 @@ class CityWeather extends Component {
   }
 
   getWeather() {
-    this.setState({ isLoaded: false, error: null });
+    this.setState({error: false, dataLoadedFromServer: false})
     console.log("inside getWeather");
-    const url = `https://secure-castle-42883.herokuapp.com/${this.props.currentCity}`;
+    const url = `http://localhost:3001/${this.props.currentCity}`;
     const data = fetch(url)
-      .then(res => res.json())
-      .then(
-        res => {
-          this.setState({
-            data: res,
-            isLoaded: true
-          });
-        },
+      .then(res => {
+        if (res.status === 200) {
+          return res.json();
+        }
+        return Promise.reject(res.status);
+      })
+      .then(data => {
+        this.setState({
+          data: data,
+          dataLoadedFromServer: true,
+          error: false
+        });
+      })
+      .catch(
+        //catch errors during the fetch procces
         error => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
           console.log(error);
+          this.setState({
+            error: true,
+            dataLoadedFromServer: false
+          });
         }
       );
-
     return data;
   }
 
   render() {
-    const { isLoaded, error, data } = this.state;
-    const {currentCity} = this.props;
+    const { dataLoadedFromServer, error, data } = this.state;
+    const { currentCity } = this.props;
 
     return (
       <section className="CityWeather">
         <h2 className="CityWeather-title">מזג אוויר עכשיו</h2>
         {error ? (
-          <Button
-            currentCity={currentCity}
-            getWeather={this.getWeather}
-          />
-        ) : isLoaded ? (
+          <ErrorMessage currentCity={currentCity} getWeather={this.getWeather}/>
+         
+        ) : dataLoadedFromServer ? (
           <WeatherDatailes data={data} />
         ) : (
           <LoadingSpinner />
