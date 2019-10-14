@@ -35,7 +35,7 @@ class App extends Component {
     //getting the chosen city data from the seedCities file imported above
     const city = cities.find(city => city.enName === cityChosen);
 
-    console.log("render App");
+   
     return (
       <div className="App">
         <Navbar

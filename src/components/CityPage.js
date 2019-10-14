@@ -8,7 +8,6 @@ import "./CityPage.css";
 
 const CityPage = props => {
   const city = props.match.params.city;
-  console.log(city);
   const { enName, src, details, heName } = props;
   return city === enName ? (
     <div className={`CityPage ${enName}`}>

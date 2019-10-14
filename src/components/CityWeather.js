@@ -22,7 +22,6 @@ class CityWeather extends Component {
 
   getWeather() {
     this.setState({ error: false, dataLoadedFromServer: false });
-    console.log("inside getWeather");
     const url = `https://alice-task-server.herokuapp.com/${this.props.currentCity}`;
     const data = fetch(url)
       .then(res => {
