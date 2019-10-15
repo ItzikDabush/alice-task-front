@@ -32,8 +32,7 @@ class CityWeather extends Component {
         return Promise.reject(res.status);
       })
       .then(data => {
-        console.log(data);
-        this.setState({
+          this.setState({
           data: data,
           dataLoadedFromServer: true,
           error: false
