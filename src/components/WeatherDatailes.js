@@ -14,7 +14,7 @@ const WeatherDatailes = ({data}) => {
         </p>
       </div>
       <div className="bottom">
-        <p>Precipitation: {precipitation["1h"]}mm</p>
+        <p>Precipitation: {precipitation['1h']}mm</p>
         <p>Humadity: {humadity}%</p>
         <p>Wind: {wind}km</p>
       </div>
